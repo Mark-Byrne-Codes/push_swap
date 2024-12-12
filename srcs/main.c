@@ -6,15 +6,15 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 09:42:05 by codespace         #+#    #+#             */
-/*   Updated: 2024/12/12 09:47:59 by codespace        ###   ########.fr       */
+/*   Updated: 2024/12/12 10:00:53 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 int main(int argc, char **argv) {
-    long stack_a;
-    long stack_b;
+    t_stack stack_a;
+    t_stack stack_b;
 
     if (argc < 2)
         return (-1);
