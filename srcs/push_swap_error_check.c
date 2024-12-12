@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap_error_check.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/12 09:42:02 by codespace         #+#    #+#             */
+/*   Updated: 2024/12/12 09:42:04 by codespace        ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
-#include <limits.h>
 
 void	ft_error(void)
 {
@@ -77,7 +88,7 @@ void	ft_check_args(int argc, char **argv)
 }
 
 
-/*
+
 int main(int argc, char **argv)
 {
     if (argc < 2)
@@ -90,4 +101,4 @@ int main(int argc, char **argv)
     ft_putstr_fd("Arguments are valid!\n", 1);
     return (0);
 }
-*/
+
