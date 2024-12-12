@@ -3,15 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbyrne <mbyrne@student.hive.fi>            +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 15:58:51 by mbyrne            #+#    #+#             */
-/*   Updated: 2024/11/22 12:39:40 by mbyrne           ###   ########.fr       */
+/*   Updated: 2024/12/12 07:21:50 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"	
+#include "libft.h"	
 
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 42
+#endif
 /*Reads from the file descriptor and 
 appends new data to the buffer until a newline or EOF is found. */
 static char	*read_and_update_buf(int fd, char *read_buf, char *full_buf)

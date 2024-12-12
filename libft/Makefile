@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mbyrne <mbyrne@student.hive.fi>            +#+  +:+       +#+         #
+#    By: codespace <codespace@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/28 14:57:50 by mbyrne            #+#    #+#              #
-#    Updated: 2024/12/09 08:49:16 by mbyrne           ###   ########.fr        #
+#    Updated: 2024/12/12 07:19:16 by codespace        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,10 +28,8 @@ LIBFT_SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
             ft_putstr_fd.c ft_putendl_fd.c ft_split.c ft_itoa.c \
             ft_strmapi.c ft_striteri.c ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
             ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
-            ft_lstclear.c ft_lstiter.c
-
-# Source files for get_next_line
-GNL_SRC = get_next_line/get_next_line.c get_next_line/get_next_line_utils.c
+            ft_lstclear.c ft_lstiter.c ft_issign.c ft_isspace.c \
+            get_next_line.c
 
 # Source files for ft_printf
 FT_PRINTF_SRC = ft_printf/ft_printf.c ft_printf/ft_printf_digits.c ft_printf/ft_printf_char.c
