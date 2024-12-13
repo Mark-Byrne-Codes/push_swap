@@ -6,99 +6,64 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 09:42:02 by codespace         #+#    #+#             */
-/*   Updated: 2024/12/12 09:42:04 by codespace        ###   ########.fr       */
+/*   Updated: 2024/12/13 07:58:10 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_error(void)
+int	ft_error(char *str)
 {
-	ft_putstr_fd("Error\n", 1);
-	exit(1);
-}
-
-static void ft_free(char **args)
-{
-	int i;
-
-	i = 0;
-	while (args[i])
+	if (!(*str == '+'
+			|| *str == '-'
+			|| (*str >= '0' && *str <= '9')))
+		return (1);
+	if ((*str == '+'
+			|| *str == '-')
+		&& !(str[1] >= '0' && str[1] <= '9'))
+		return (1);
+	while (*++str)
 	{
-		free(args[i]);
-		i++;
-	}
-	free(args);
-}
-
-static int	ft_contains(long num, char **argv, int i)
-{
-	i++;
-	while (argv[i])
-	{
-		if (ft_atoi(argv[i]) == num)
+		if (!(*str_n >= '0' && *str_n <= '9'))
 			return (1);
-		i++;
 	}
 	return (0);
 }
 
-static int	ft_isnum(const char *num)
+int	error_dup(t_stack *stack_a, int n)
 {
-	int	i;
-
-	i = 0;
-	if (num[0] == '-')
-		i++;
-	while (num[i])
+	if (!stack_a)
+		return (0);
+	while (stack_a)
 	{
-		if (!ft_isdigit(num[i]))
-			return (0);
-		i++;
+		if (stack_a->nbr == n)
+			return (1);
+		stack_a = stack_a->next;
 	}
-	return (1);
+	return (0);
 }
 
-void	ft_check_args(int argc, char **argv)
+void	free_stack(t_stack **stack)
 {
-	int		i;
-	long	tmp;
-	char	**args;
+	t_stack	*tmp;
+	t_stack	*current;
 
-	args = argv;
-	i = 1;
-	if (argc == 2)
+	if (!stack)
+		return ;
+	current = *stack;
+	while (current)
 	{
-		args = ft_split(argv[1], ' ');
-		i = 0;
+		tmp = current->next;
+		current->nbr = 0;
+		free(current);
+		current = tmp;
 	}
-	while (args[i])
-	{
-		if (!ft_isnum(args[i]))
-			ft_error();
-		tmp = ft_atoi(args[i]);
-		if (tmp < INT_MIN || tmp > INT_MAX)
-			ft_error();
-		if (ft_contains(tmp, args, i))
-			ft_error();
-		i++;
-	}
-	if (argc == 2)
-		ft_free(args);
+	*stack == NULL;
 }
 
-
-
-int main(int argc, char **argv)
+void	free_errors(t_stack **stack_a)
 {
-    if (argc < 2)
-    {
-        ft_putstr_fd("Usage: ./push_swap <numbers>\n", 1);
-        return (1);
-    }
-    ft_check_args(argc, argv);
-
-    ft_putstr_fd("Arguments are valid!\n", 1);
-    return (0);
+	free_stack(stack_a);
+	ft_putstr_fd("Error\n", 2);
+	exit(1);
 }
-
