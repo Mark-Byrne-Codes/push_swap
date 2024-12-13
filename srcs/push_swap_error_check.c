@@ -6,13 +6,13 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 09:42:02 by codespace         #+#    #+#             */
-/*   Updated: 2024/12/13 07:58:10 by codespace        ###   ########.fr       */
+/*   Updated: 2024/12/13 08:03:32 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_error(char *str)
+int	valid_numbers(char *str)
 {
 	if (!(*str == '+'
 			|| *str == '-'
@@ -24,7 +24,7 @@ int	ft_error(char *str)
 		return (1);
 	while (*++str)
 	{
-		if (!(*str_n >= '0' && *str_n <= '9'))
+		if (!(*str >= '0' && *str <= '9'))
 			return (1);
 	}
 	return (0);
@@ -58,7 +58,7 @@ void	free_stack(t_stack **stack)
 		free(current);
 		current = tmp;
 	}
-	*stack == NULL;
+	*stack = NULL;
 }
 
 void	free_errors(t_stack **stack_a)
