@@ -6,12 +6,13 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 09:42:02 by codespace         #+#    #+#             */
-/*   Updated: 2024/12/13 08:03:32 by codespace        ###   ########.fr       */
+/*   Updated: 2024/12/18 07:26:56 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// Validates if the string represents a valid number
 int	valid_numbers(char *str)
 {
 	if (!(*str == '+'
@@ -30,6 +31,7 @@ int	valid_numbers(char *str)
 	return (0);
 }
 
+// Checks for duplicate numbers in the stack
 int	error_dup(t_stack *stack_a, int n)
 {
 	if (!stack_a)
@@ -43,6 +45,7 @@ int	error_dup(t_stack *stack_a, int n)
 	return (0);
 }
 
+// Frees all nodes in the stack and sets the stack pointer to NULL
 void	free_stack(t_stack **stack)
 {
 	t_stack	*tmp;
@@ -61,6 +64,7 @@ void	free_stack(t_stack **stack)
 	*stack = NULL;
 }
 
+// Frees the stack and prints an error message
 void	free_errors(t_stack **stack_a)
 {
 	free_stack(stack_a);
