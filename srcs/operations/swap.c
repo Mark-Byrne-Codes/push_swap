@@ -6,12 +6,13 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 08:34:10 by codespace         #+#    #+#             */
-/*   Updated: 2024/12/19 06:28:46 by codespace        ###   ########.fr       */
+/*   Updated: 2024/12/19 06:39:51 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// Swaps the first two nodes of the stack
 static void	swap(t_stack **head)
 {
 	if (!*head || !(*head)->next)
@@ -25,24 +26,28 @@ static void	swap(t_stack **head)
 	(*head)->prev = NULL;
 }
 
-void	sa(t_stack	**a, bool print)
+// Swaps the first two nodes of stack a
+void	sa(t_stack	**stack_a, bool print)
 {
-	swap(a);
+	swap(stack_a);
 	if (!print)
 		ft_printf("sa\n");
 }
 
-void	sb(t_stack **b, bool print)
+
+// Swaps the first two nodes of stack b
+void	sb(t_stack **stack_b, bool print)
 {
-	swap(b);
+	swap(stack_b);
 	if (!print)
 		ft_printf("sb\n");
 }
 
-void	ss(t_stack **a, t_stack **b, bool print)
+// Swaps the first two nodes of both stacks
+void	ss(t_stack **stack_a, t_stack **stack_b, bool print)
 {
-	swap(a);
-	swap(b);
+	swap(stack_a);
+	swap(stack_b);
 	if (!print)
 		ft_printf("ss\n");
 }
