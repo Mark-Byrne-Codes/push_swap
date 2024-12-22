@@ -6,9 +6,14 @@ generate_random_numbers() {
     shuf -i 1-1000000 -n "$count" | tr '\n' ' '
 }
 
-# Check if push_swap exists
+# Check if push_swap and checker_linux exist
 if [ ! -f ./push_swap ]; then
     echo "Error: push_swap executable not found in the current directory."
+    exit 1
+fi
+
+if [ ! -f ./checker_linux ]; then
+    echo "Error: checker_linux executable not found in the current directory."
     exit 1
 fi
 
@@ -25,6 +30,7 @@ for index in "${!TEST_SIZES[@]}"; do
     limit=${OPERATION_LIMITS[index]}
     pass_count=0
     fail_count=0
+    checker_fail_count=0
 
     echo "Testing with $size random numbers for $ITERATIONS iterations..."
 
@@ -33,7 +39,18 @@ for index in "${!TEST_SIZES[@]}"; do
         RANDOM_NUMBERS=$(generate_random_numbers "$size")
 
         # Run push_swap and count the number of lines in the output
-        OPERATION_COUNT=$(./push_swap "$RANDOM_NUMBERS" | wc -l)
+        OPERATIONS=$(./push_swap $RANDOM_NUMBERS)
+        OPERATION_COUNT=$(echo "$OPERATIONS" | wc -l)
+
+        # Validate using the checker
+        CHECKER_RESULT=$(echo "$OPERATIONS" | ./checker_linux $RANDOM_NUMBERS)
+
+        # Check correctness
+        if [ "$CHECKER_RESULT" != "OK" ]; then
+            echo "FAIL ($i/$ITERATIONS): Checker failed for $size numbers. Result: $CHECKER_RESULT"
+            ((checker_fail_count++))
+            continue
+        fi
 
         # Check if the number of operations meets the requirement
         if [ "$OPERATION_COUNT" -le "$limit" ]; then
@@ -46,7 +63,7 @@ for index in "${!TEST_SIZES[@]}"; do
     done
 
     # Summary for this test size
-    echo "Summary for $size numbers: $pass_count passes, $fail_count fails"
+    echo "Summary for $size numbers: $pass_count passes, $fail_count fails, $checker_fail_count checker failures"
     echo
 done
 
