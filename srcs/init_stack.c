@@ -6,11 +6,12 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 06:41:36 by codespace         #+#    #+#             */
-/*   Updated: 2024/12/18 07:11:16 by codespace        ###   ########.fr       */
+/*   Updated: 2024/12/22 12:16:53 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 // Converts a string to a long integer, handling whitespace and signs
 static long	ft_atol(const char *s)
 {
@@ -69,12 +70,12 @@ void	init_stack_a(t_stack **stack_a, char **argv)
 	i = 0;
 	while (argv[i])
 	{
-		if (error_syntax(argv[i]))
+		if (valid_numbers(argv[i]))
 			free_errors(stack_a);
 		n = ft_atol(argv[i]);
 		if (n > INT_MAX || n < INT_MIN)
 			free_errors(stack_a);
-		if (error_duplicate(*stack_a, (int)n))
+		if (error_dup(*stack_a, (int)n))
 			free_errors(stack_a);
 		append_node(stack_a, (int)n);
 		i++;
@@ -93,4 +94,26 @@ t_stack	*get_cheapest(t_stack *stack)
 		stack = stack->next;
 	}
 	return (NULL);
+}
+
+// Moves the specified node to the top of the stack based on the stack name
+void	prep_for_push(t_stack **stack, t_stack *top_node, char stack_name)
+{
+	while (*stack != top_node)
+	{
+		if (stack_name == 'a')
+		{
+			if (top_node->above_median)
+				ra(stack, false);
+			else
+				rra(stack, false);
+		}
+		else if (stack_name == 'b')
+		{
+			if (top_node->above_median)
+				rb(stack, false);
+			else
+				rrb(stack, false);
+		}	
+	}
 }

@@ -6,11 +6,11 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 06:35:25 by codespace         #+#    #+#             */
-/*   Updated: 2024/12/19 06:43:32 by codespace        ###   ########.fr       */
+/*   Updated: 2024/12/22 12:17:52 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 // Rotates the bottom node of the stack to the top
 static void	rev_rotate(t_stack **stack)
 {
@@ -49,4 +49,13 @@ void	rrr(t_stack **stack_a, t_stack **stack_b, bool print)
 	rev_rotate(stack_b);
 	if (!print)
 		ft_printf("rrr\n");
+}
+
+//Reverse rotates both stacks to move their respective target nodes to the top
+void	rev_rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node)
+{
+	while (*b != cheapest_node->target && *a != cheapest_node)
+		rrr(a, b, false);
+	current_index(*a);
+	current_index(*b);
 }

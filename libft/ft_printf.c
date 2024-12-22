@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbyrne <mbyrne@student.hive.fi>            +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 11:31:26 by mbyrne            #+#    #+#             */
-/*   Updated: 2024/11/24 10:59:32 by mbyrne           ###   ########.fr       */
+/*   Updated: 2024/12/20 11:47:44 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 /*Parses the format specifier and calls the corresponding print function.
  Returns the total number of characters printed or -1 on error. */

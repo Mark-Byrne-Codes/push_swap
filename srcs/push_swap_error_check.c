@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 09:42:02 by codespace         #+#    #+#             */
-/*   Updated: 2024/12/18 07:26:56 by codespace        ###   ########.fr       */
+/*   Updated: 2024/12/22 12:16:36 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,20 @@ void	free_errors(t_stack **stack_a)
 	free_stack(stack_a);
 	ft_putstr_fd("Error\n", 2);
 	exit(1);
+}
+
+// Frees the split strings
+void	free_split(char **str)
+{
+	int	i;
+
+	if (!str)
+		return ;
+	i = 0;
+	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
 }

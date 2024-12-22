@@ -6,12 +6,12 @@
 #    By: codespace <codespace@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/12 09:42:15 by codespace         #+#    #+#              #
-#    Updated: 2024/12/19 06:24:57 by codespace        ###   ########.fr        #
+#    Updated: 2024/12/20 11:46:15 by codespace        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
-CC = cc
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 LIBFT = libft/libft.a
 
@@ -25,19 +25,19 @@ OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(LIBFT) $(OBJ)
-    $(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
-
 $(LIBFT):
-    make -C libft
+					@make -C ./libft
+
+$(NAME): $(OBJ) $(LIBFT)
+					@$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
 
 clean:
-    rm -f $(OBJ)
-    make -C libft clean
+					@$(RM) $(OBJ)
+					@make clean -C ./libft
 
 fclean: clean
-    rm -f $(NAME)
-    make -C libft fclean
+					@$(RM) $(NAME)
+					@make fclean -C ./libft
 
 re: fclean all
 

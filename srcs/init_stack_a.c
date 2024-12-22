@@ -6,12 +6,11 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 08:57:50 by mbyrne            #+#    #+#             */
-/*   Updated: 2024/12/18 08:01:25 by codespace        ###   ########.fr       */
+/*   Updated: 2024/12/22 12:17:05 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 // Assigns an index to each node in the stack and determines
 //if it's above or below the median
 void	current_index(t_stack *stack)

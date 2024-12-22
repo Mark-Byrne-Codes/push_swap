@@ -6,11 +6,11 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 08:34:10 by codespace         #+#    #+#             */
-/*   Updated: 2024/12/19 06:39:51 by codespace        ###   ########.fr       */
+/*   Updated: 2024/12/22 12:17:30 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 // Swaps the first two nodes of the stack
 static void	swap(t_stack **head)
@@ -33,7 +33,6 @@ void	sa(t_stack	**stack_a, bool print)
 	if (!print)
 		ft_printf("sa\n");
 }
-
 
 // Swaps the first two nodes of stack b
 void	sb(t_stack **stack_b, bool print)

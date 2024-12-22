@@ -6,7 +6,7 @@
 #    By: codespace <codespace@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/28 14:57:50 by mbyrne            #+#    #+#              #
-#    Updated: 2024/12/12 07:19:16 by codespace        ###   ########.fr        #
+#    Updated: 2024/12/20 11:46:35 by codespace        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,8 @@
 # **************************************************************************** #
 
 NAME = libft.a
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror -fPIC
 
 # Source files for libft
 LIBFT_SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
@@ -29,13 +29,12 @@ LIBFT_SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
             ft_strmapi.c ft_striteri.c ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
             ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
             ft_lstclear.c ft_lstiter.c ft_issign.c ft_isspace.c \
-            get_next_line.c
+            get_next_line.c ft_printf.c ft_printf_digits.c ft_printf_char.c
 
-# Source files for ft_printf
-FT_PRINTF_SRC = ft_printf/ft_printf.c ft_printf/ft_printf_digits.c ft_printf/ft_printf_char.c
+
 
 # Combined source files
-SRC = $(LIBFT_SRC) $(GNL_SRC) $(FT_PRINTF_SRC)
+SRC = $(LIBFT_SRC)
 
 # Object files
 OBJ = $(SRC:.c=.o)

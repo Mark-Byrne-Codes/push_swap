@@ -6,11 +6,11 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 08:34:16 by codespace         #+#    #+#             */
-/*   Updated: 2024/12/18 10:04:50 by codespace        ###   ########.fr       */
+/*   Updated: 2024/12/22 12:17:59 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void	push(t_stack **dst, t_stack **src)
 {
@@ -36,7 +36,6 @@ static void	push(t_stack **dst, t_stack **src)
 	}
 }
 
-
 void	pa(t_stack **stack_a, t_stack **stack_b, bool print)
 {
 	push(stack_a, stack_b);
@@ -44,7 +43,7 @@ void	pa(t_stack **stack_a, t_stack **stack_b, bool print)
 		ft_printf("pa\n");
 }
 
-void	pb(t_stack **stack_a, t_stack **stack_b, bool print)
+void	pb(t_stack **stack_b, t_stack **stack_a, bool print)
 {
 	push(stack_b, stack_a);
 	if (!print)
