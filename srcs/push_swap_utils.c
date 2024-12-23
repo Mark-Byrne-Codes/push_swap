@@ -39,7 +39,7 @@ t_stack	*find_last(t_stack *stack)
 }
 
 // Checks if the stack is sorted in ascending order
-bool	stack_sorted(t_stack *stack)
+bool	is_stack_sorted(t_stack *stack)
 {
 	if (!stack)
 		return (1);

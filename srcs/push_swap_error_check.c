@@ -13,7 +13,7 @@
 #include "push_swap.h"
 
 // Validates if the string represents a valid number
-int	valid_numbers(char *str)
+int	is_valid_numbers(char *str)
 {
 	if (!(*str == '+'
 			|| *str == '-'
@@ -32,7 +32,7 @@ int	valid_numbers(char *str)
 }
 
 // Checks for duplicate numbers in the stack
-int	error_dup(t_stack *stack_a, int n)
+int	has_error_dup(t_stack *stack_a, int n)
 {
 	if (!stack_a)
 		return (0);

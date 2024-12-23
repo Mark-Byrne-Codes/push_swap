@@ -30,10 +30,10 @@ int	main(int argc, char **argv)
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (1);
 	args = parse_args(argc, argv);
-	init_stack_a(&stack_a, args);
+	initialize_stack(&stack_a, args);
 	if (argc == 2)
 		free_split(args);
-	if (!stack_sorted(stack_a))
+	if (!is_stack_sorted(stack_a))
 	{
 		if (stack_len(stack_a) == 2)
 			sa(&stack_a, false);

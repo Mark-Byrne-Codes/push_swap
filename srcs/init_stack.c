@@ -35,7 +35,7 @@ static long	ft_atol(const char *s)
 }
 
 // Appends a new node with value 'n' to the end of the stack
-static void	append_node(t_stack **stack, int n)
+static void	add_node_to_stack(t_stack **stack, int n)
 {
 	t_stack	*node;
 	t_stack	*last_node;
@@ -62,7 +62,7 @@ static void	append_node(t_stack **stack, int n)
 }
 
 // Initializes stack_a by parsing arguments and adding nodes to the stack
-void	init_stack_a(t_stack **stack_a, char **argv)
+void	initialize_stack(t_stack **stack_a, char **argv)
 {
 	long	n;
 	int		i;
@@ -70,14 +70,14 @@ void	init_stack_a(t_stack **stack_a, char **argv)
 	i = 0;
 	while (argv[i])
 	{
-		if (valid_numbers(argv[i]))
+		if (is_valid_numbers(argv[i]))
 			free_errors(stack_a);
 		n = ft_atol(argv[i]);
 		if (n > INT_MAX || n < INT_MIN)
 			free_errors(stack_a);
-		if (error_dup(*stack_a, (int)n))
+		if (has_error_dup(*stack_a, (int)n))
 			free_errors(stack_a);
-		append_node(stack_a, (int)n);
+		add_node_to_stack(stack_a, (int)n);
 		i++;
 	}
 }

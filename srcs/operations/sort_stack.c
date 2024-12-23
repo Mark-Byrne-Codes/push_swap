@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 // Moves the cheapest node from stack_a to stack_b
-static void	move_a_to_b(t_stack **stack_a, t_stack **stack_b)
+static void	move_cheapest_to_b(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*cheapest_node;
 
@@ -36,7 +36,7 @@ static void	move_b_to_a(t_stack **stack_a, t_stack **stack_b)
 }
 
 // Moves the smallest number in stack_a to the top
-static void	min_on_top(t_stack **stack_a)
+static void	bring_min_to_top(t_stack **stack_a)
 {
 	while ((*stack_a)->nbr != find_min(*stack_a)->nbr)
 	{
@@ -53,14 +53,12 @@ void	sort_stacks(t_stack **stack_a, t_stack **stack_b)
 	int	len_a;
 
 	len_a = stack_len(*stack_a);
-	if (len_a-- > 3 && !stack_sorted(*stack_a))
+	if (len_a-- > 3 && !is_stack_sorted(*stack_a))
 		pb(stack_b, stack_a, false);
-	if (len_a-- > 3 && !stack_sorted(*stack_a))
-		pb(stack_b, stack_a, false);
-	while (len_a-- > 3 && !stack_sorted(*stack_a))
+	while (len_a-- > 3 && !is_stack_sorted(*stack_a))
 	{
 		init_nodes_a(*stack_a, *stack_b);
-		move_a_to_b(stack_a, stack_b);
+		move_cheapest_to_b(stack_a, stack_b);
 	}
 	sort_three(stack_a);
 	while (*stack_b)
@@ -69,5 +67,5 @@ void	sort_stacks(t_stack **stack_a, t_stack **stack_b)
 		move_b_to_a(stack_a, stack_b);
 	}
 	current_index(*stack_a);
-	min_on_top(stack_a);
+	bring_min_to_top(stack_a);
 }
