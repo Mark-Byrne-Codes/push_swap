@@ -17,8 +17,8 @@ LIBFT = libft/libft.a
 
 SRC_DIR = srcs
 SRC_FILES = push_swap.c push_swap_utils.c init_stack.c init_stack_a.c init_stack_b.c \
-            push_swap_error_check.c operations/swap.c operations/push.c operations/sort_three.c \
-            operations/rev_rotate.c operations/sort_stack.c operations/rotate.c
+            push_swap_error_check.c operations/swap.c operations/push.c  \
+            operations/rev_rotate.c operations/rotate.c sort_stack.c
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 
 OBJ = $(SRC:.c=.o)

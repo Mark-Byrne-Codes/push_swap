@@ -17,8 +17,7 @@ static void	move_cheapest_to_b(t_stack **stack_a, t_stack **stack_b)
 	t_stack	*cheapest_node;
 
 	cheapest_node = get_cheapest(*stack_a);
-	if (cheapest_node->above_median
-		&& cheapest_node->target->above_median)
+	if (cheapest_node->above_median && cheapest_node->target->above_median)
 		rotate_both(stack_a, stack_b, cheapest_node);
 	else if (!(cheapest_node->above_median)
 		&& !(cheapest_node->target->above_median))
@@ -45,6 +44,20 @@ static void	bring_min_to_top(t_stack **stack_a)
 		else
 			rra(stack_a, false);
 	}
+}
+
+// Handles sorting stack_a when it has exactly three nodes
+void	sort_three(t_stack **stack_a)
+{
+	t_stack	*biggest_node;
+
+	biggest_node = find_max(*stack_a);
+	if (biggest_node == *stack_a)
+		ra(stack_a, false);
+	else if ((*stack_a)->next == biggest_node)
+		rra(stack_a, false);
+	if ((*stack_a)->nbr > (*stack_a)->next->nbr)
+		sa(stack_a, false);
 }
 
 // Sorts stack_a

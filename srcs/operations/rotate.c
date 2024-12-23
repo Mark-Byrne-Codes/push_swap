@@ -50,12 +50,3 @@ void	rr(t_stack **stack_a, t_stack **stack_b, bool print)
 	if (!print)
 		ft_printf("rr\n");
 }
-
-//Rotates both stacks to move their respective target nodes to the top
-void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node)
-{
-	while (*b != cheapest_node->target && *a != cheapest_node)
-		rr(a, b, false);
-	current_index(*a);
-	current_index(*b);
-}

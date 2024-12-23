@@ -12,28 +12,6 @@
 
 #include "push_swap.h"
 
-// Converts a string to a long integer, handling whitespace and signs
-static long	ft_atol(const char *s)
-{
-	long	result;
-	int		sign;
-
-	result = 0;
-	sign = 1;
-	while (*s == ' ' || *s == '\t' || *s == '\n' || \
-			*s == '\r' || *s == '\f' || *s == '\v')
-		s++;
-	if (*s == '-' || *s == '+')
-	{
-		if (*s == '-')
-			sign = -1;
-		s++;
-	}
-	while (ft_isdigit(*s))
-		result = result * 10 + (*s++ - '0');
-	return (result * sign);
-}
-
 // Appends a new node with value 'n' to the end of the stack
 static void	add_node_to_stack(t_stack **stack, int n)
 {
@@ -72,7 +50,7 @@ void	initialize_stack(t_stack **stack_a, char **argv)
 	{
 		if (is_valid_numbers(argv[i]))
 			free_errors(stack_a);
-		n = ft_atol(argv[i]);
+		n = ft_atoi(argv[i]);
 		if (n > INT_MAX || n < INT_MIN)
 			free_errors(stack_a);
 		if (has_error_dup(*stack_a, (int)n))
