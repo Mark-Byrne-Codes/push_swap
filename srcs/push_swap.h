@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 09:42:12 by codespace         #+#    #+#             */
-/*   Updated: 2024/12/22 12:16:04 by codespace        ###   ########.fr       */
+/*   Updated: 2024/12/24 07:39:11 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,16 +55,16 @@ void	set_cheapest(t_stack *stack);
 t_stack	*get_cheapest(t_stack *stack);
 void	prep_for_push(t_stack **stack, t_stack *top_node, char stack_name);
 // Operations
-void	sa(t_stack **a, bool print);
-void	sb(t_stack **b, bool print);
-void	ss(t_stack **a, t_stack **b, bool print);
-void	ra(t_stack **a, bool print);
-void	rb(t_stack **b, bool print);
-void	rr(t_stack **a, t_stack **b, bool print);
-void	rra(t_stack **a, bool print);
-void	rrb(t_stack **b, bool print);
-void	rrr(t_stack **a, t_stack **b, bool print);
-void	pa(t_stack **a, t_stack **b, bool print);
-void	pb(t_stack **b, t_stack **a, bool print);
+void	sa(t_stack **a);
+void	sb(t_stack **b);
+void	ss(t_stack **a, t_stack **b);
+void	ra(t_stack **a);
+void	rb(t_stack **b);
+void	rr(t_stack **a, t_stack **b);
+void	rra(t_stack **a);
+void	rrb(t_stack **b);
+void	rrr(t_stack **a, t_stack **b);
+void	pa(t_stack **a, t_stack **b);
+void	pb(t_stack **b, t_stack **a);
 
 #endif

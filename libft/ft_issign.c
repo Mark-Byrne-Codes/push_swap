@@ -6,11 +6,11 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 09:41:47 by codespace         #+#    #+#             */
-/*   Updated: 2024/12/12 09:41:49 by codespace        ###   ########.fr       */
+/*   Updated: 2024/12/24 07:34:10 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_issign(char c)
+int	ft_issign(char c)
 {
 	if (c == '-' || c == '+')
 		return (1);

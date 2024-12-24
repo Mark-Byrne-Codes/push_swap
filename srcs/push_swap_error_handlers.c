@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_error_check.c                            :+:      :+:    :+:   */
+/*   push_swap_error_handlers.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 09:42:02 by codespace         #+#    #+#             */
-/*   Updated: 2024/12/22 12:16:36 by codespace        ###   ########.fr       */
+/*   Updated: 2024/12/24 07:30:51 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,16 @@
 // Validates if the string represents a valid number
 int	is_valid_numbers(char *str)
 {
-	if (!(*str == '+'
-			|| *str == '-'
-			|| (*str >= '0' && *str <= '9')))
+	if (!str || (!ft_isdigit(*str) && *str != '+' && *str != '-'))
 		return (1);
-	if ((*str == '+'
-			|| *str == '-')
-		&& !(str[1] >= '0' && str[1] <= '9'))
+	if ((*str == '+' || *str == '-') && !ft_isdigit(*(str + 1)))
 		return (1);
-	while (*++str)
+	str++;
+	while (*str)
 	{
-		if (!(*str >= '0' && *str <= '9'))
+		if (!ft_isdigit(*str))
 			return (1);
+		str++;
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 06:34:29 by codespace         #+#    #+#             */
-/*   Updated: 2024/12/22 12:17:47 by codespace        ###   ########.fr       */
+/*   Updated: 2024/12/24 07:36:26 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,26 +27,23 @@ static void	rotate(t_stack **stack)
 }
 
 // Rotates the top node of stack a to the bottom
-void	ra(t_stack **stack_a, bool print)
+void	ra(t_stack **stack_a)
 {
 	rotate(stack_a);
-	if (!print)
-		ft_printf("ra\n");
+	ft_printf("ra\n");
 }
 
 // Rotates the top node of stack b to the bottom
-void	rb(t_stack **stack_b, bool print)
+void	rb(t_stack **stack_b)
 {
 	rotate(stack_b);
-	if (!print)
-		ft_printf("rb\n");
+	ft_printf("rb\n");
 }
 
 // Rotates the top node of both stacks to the bottom
-void	rr(t_stack **stack_a, t_stack **stack_b, bool print)
+void	rr(t_stack **stack_a, t_stack **stack_b)
 {
 	rotate(stack_a);
 	rotate(stack_b);
-	if (!print)
-		ft_printf("rr\n");
+	ft_printf("rr\n");
 }

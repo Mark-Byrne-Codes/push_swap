@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 08:34:16 by codespace         #+#    #+#             */
-/*   Updated: 2024/12/22 12:17:59 by codespace        ###   ########.fr       */
+/*   Updated: 2024/12/24 07:35:15 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,14 @@ static void	push(t_stack **dst, t_stack **src)
 	}
 }
 
-void	pa(t_stack **stack_a, t_stack **stack_b, bool print)
+void	pa(t_stack **stack_a, t_stack **stack_b)
 {
 	push(stack_a, stack_b);
-	if (!print)
-		ft_printf("pa\n");
+	ft_printf("pa\n");
 }
 
-void	pb(t_stack **stack_b, t_stack **stack_a, bool print)
+void	pb(t_stack **stack_b, t_stack **stack_a)
 {
 	push(stack_b, stack_a);
-	if (!print)
-		ft_printf("pb\n");
+	ft_printf("pb\n");
 }

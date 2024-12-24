@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 14:58:23 by mbyrne            #+#    #+#             */
-/*   Updated: 2024/12/22 10:31:06 by codespace        ###   ########.fr       */
+/*   Updated: 2024/12/24 07:33:23 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-char 	*get_next_line(int fd);
+char	*get_next_line(int fd);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -69,13 +69,13 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
-int	ft_printf(const char *format, ...);
-int	parse_format(const char **format, va_list args);
-int	ft_printchar(int c);
-int	ft_printstr(char *str);
-int	ft_printnbr(int n);
-int	ft_printnbru(unsigned int n);
-int	ft_print_hex(unsigned long n, int upper);
-int	ft_print_pointer(void *ptr);
+int		ft_printf(const char *format, ...);
+int		parse_format(const char **format, va_list args);
+int		ft_printchar(int c);
+int		ft_printstr(char *str);
+int		ft_printnbr(int n);
+int		ft_printnbru(unsigned int n);
+int		ft_print_hex(unsigned long n, int upper);
+int		ft_print_pointer(void *ptr);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 08:34:10 by codespace         #+#    #+#             */
-/*   Updated: 2024/12/22 12:17:30 by codespace        ###   ########.fr       */
+/*   Updated: 2024/12/24 07:37:06 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,26 +27,23 @@ static void	swap(t_stack **head)
 }
 
 // Swaps the first two nodes of stack a
-void	sa(t_stack	**stack_a, bool print)
+void	sa(t_stack	**stack_a)
 {
 	swap(stack_a);
-	if (!print)
-		ft_printf("sa\n");
+	ft_printf("sa\n");
 }
 
 // Swaps the first two nodes of stack b
-void	sb(t_stack **stack_b, bool print)
+void	sb(t_stack **stack_b)
 {
 	swap(stack_b);
-	if (!print)
-		ft_printf("sb\n");
+	ft_printf("sb\n");
 }
 
 // Swaps the first two nodes of both stacks
-void	ss(t_stack **stack_a, t_stack **stack_b, bool print)
+void	ss(t_stack **stack_a, t_stack **stack_b)
 {
 	swap(stack_a);
 	swap(stack_b);
-	if (!print)
-		ft_printf("ss\n");
+	ft_printf("ss\n");
 }
